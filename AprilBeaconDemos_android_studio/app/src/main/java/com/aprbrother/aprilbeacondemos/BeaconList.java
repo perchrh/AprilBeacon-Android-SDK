@@ -59,6 +59,7 @@ public class BeaconList extends AppCompatActivity {
         lv.setAdapter(adapter);
         AprilL.enableDebugLogging(true);
         beaconManager = new BeaconManager(getApplicationContext());
+        beaconManager.setRangingExpirationMill(30L); // recommended by April Brother for Android 7.0 (and presumably later versions)
 
         // 此处上下文需要是Activity或者Serivce
         // 若在FragmentActivit或者其他Activity子类中使用 上下文请使用getApplicationContext
