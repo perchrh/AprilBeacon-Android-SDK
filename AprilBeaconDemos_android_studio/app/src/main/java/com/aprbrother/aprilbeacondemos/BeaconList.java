@@ -52,7 +52,7 @@ public class BeaconList extends Activity {
     }
 
     private void init() {
-        requestCoarsePermissionLocation(); // Necessary for
+        requestCoarsePermissionLocation(); // Necessary for scan to work
 
         myBeacons = new ArrayList<Beacon>();
         ListView lv = findViewById(R.id.lv);
@@ -184,7 +184,7 @@ public class BeaconList extends Activity {
     private void connectToService() {
         Log.i(TAG, "connectToService");
         getActionBar().setSubtitle("Scanning...");
-        adapter.replaceWith(Collections.<Beacon>emptyList());
+        adapter.replaceWith(Collections.emptyList());
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
