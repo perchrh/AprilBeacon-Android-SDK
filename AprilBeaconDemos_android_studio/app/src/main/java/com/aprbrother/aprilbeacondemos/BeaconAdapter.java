@@ -98,13 +98,13 @@ public class BeaconAdapter extends BaseAdapter {
 		final TextView proximityView;
 
 		ViewHolder(View view) {
-			macTextView = (TextView) view.findViewWithTag("mac");
-			uuidTextView = (TextView) view.findViewWithTag("uuid");
-			majorTextView = (TextView) view.findViewWithTag("major");
-			minorTextView = (TextView) view.findViewWithTag("minor");
-			measuredPowerTextView = (TextView) view.findViewWithTag("mpower");
-			rssiTextView = (TextView) view.findViewWithTag("rssi");
-			proximityView = (TextView) view.findViewWithTag("proximity");
+			macTextView = view.findViewWithTag("mac");
+			uuidTextView = view.findViewWithTag("uuid");
+			majorTextView = view.findViewWithTag("major");
+			minorTextView = view.findViewWithTag("minor");
+			measuredPowerTextView = view.findViewWithTag("mpower");
+			rssiTextView = view.findViewWithTag("rssi");
+			proximityView = view.findViewWithTag("proximity");
 		}
 	}
 }

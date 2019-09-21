@@ -38,16 +38,16 @@ public class EddyStoneModifyActivity extends Activity implements
 	}
 
 	private void initView() {
-		TextView model = (TextView) findViewById(R.id.tv_model);
-		TextView changeModelToIBeacon = (TextView) findViewById(R.id.tv_change_model_to_ibeacon);
-		TextView changeModelToUrl = (TextView) findViewById(R.id.tv_change_model_to_url);
-		TextView changeModelToUid = (TextView) findViewById(R.id.tv_change_model_to_uid);
-		TextView changeModelToAll = (TextView) findViewById(R.id.tv_change_model_to_all);
+		TextView model = findViewById(R.id.tv_model);
+		TextView changeModelToIBeacon = findViewById(R.id.tv_change_model_to_ibeacon);
+		TextView changeModelToUrl = findViewById(R.id.tv_change_model_to_url);
+		TextView changeModelToUid = findViewById(R.id.tv_change_model_to_uid);
+		TextView changeModelToAll = findViewById(R.id.tv_change_model_to_all);
 
-		TextView changeUrl = (TextView) findViewById(R.id.tv_change_url);
-		TextView changeUid = (TextView) findViewById(R.id.tv_change_uid);
-		TextView changeUidNameSpace = (TextView) findViewById(R.id.tv_change_uid_name_space);
-		TextView changeUidCustom = (TextView) findViewById(R.id.tv_change_uid_custom);
+		TextView changeUrl = findViewById(R.id.tv_change_url);
+		TextView changeUid = findViewById(R.id.tv_change_uid);
+		TextView changeUidNameSpace = findViewById(R.id.tv_change_uid_name_space);
+		TextView changeUidCustom = findViewById(R.id.tv_change_uid_custom);
 		model.setText(getResources().getString(R.string.current_model)
 				+ eddyStone.getModel());
 		changeModelToIBeacon.setOnClickListener(this);
@@ -58,10 +58,10 @@ public class EddyStoneModifyActivity extends Activity implements
 		changeUid.setOnClickListener(this);
 		changeUidNameSpace.setOnClickListener(this);
 		changeUidCustom.setOnClickListener(this);
-		et_url = (EditText) findViewById(R.id.et_url);
-		et_uid = (EditText) findViewById(R.id.et_uid);
-		et_uid_name_space = (EditText) findViewById(R.id.et_uid_name_space);
-		et_uid_custom = (EditText) findViewById(R.id.et_uid_custom);
+		et_url = findViewById(R.id.et_url);
+		et_uid = findViewById(R.id.et_uid);
+		et_uid_name_space = findViewById(R.id.et_uid_name_space);
+		et_uid_custom = findViewById(R.id.et_uid_custom);
 		et_url.setText("http://abc.com");
 		et_uid.setText("12345678-1234-1234-1234-12345678901234");
 		et_uid_name_space.setText("11223344556677889900");

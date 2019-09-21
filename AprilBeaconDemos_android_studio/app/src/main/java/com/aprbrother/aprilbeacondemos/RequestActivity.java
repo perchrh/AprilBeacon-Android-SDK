@@ -17,7 +17,7 @@ public class RequestActivity extends Activity {
 	private void init() {
 		String string = getIntent().getExtras().getString("string");
 		
-		TextView tv = (TextView) findViewById(R.id.tv_request);
+		TextView tv = findViewById(R.id.tv_request);
 		
 		tv.setText(string);
 	}

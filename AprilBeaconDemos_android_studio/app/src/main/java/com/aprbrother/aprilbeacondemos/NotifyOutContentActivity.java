@@ -13,7 +13,7 @@ public class NotifyOutContentActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_notify_out_content);
 		super.onCreate(savedInstanceState);
-		LinearLayout ll_notify_content = (LinearLayout) findViewById(R.id.ll_notify_content);
+		LinearLayout ll_notify_content = findViewById(R.id.ll_notify_content);
 		ll_notify_content.setOnClickListener(new OnClickListener() {
 			
 			@Override

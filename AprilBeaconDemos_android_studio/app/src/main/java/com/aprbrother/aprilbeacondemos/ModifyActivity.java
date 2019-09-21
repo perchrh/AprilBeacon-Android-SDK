@@ -68,12 +68,12 @@ public class ModifyActivity extends Activity implements OnClickListener {
 		Bundle bundle = getIntent().getExtras();
 		beacon = bundle.getParcelable("beacon");
 
-		uuid = (EditText) findViewById(R.id.uuid);
-		major = (EditText) findViewById(R.id.major);
-		minor = (EditText) findViewById(R.id.minor);
-		measuredPower = (EditText) findViewById(R.id.measuredPower);
-		password = (EditText) findViewById(R.id.password);
-		txPower = (EditText) findViewById(R.id.TxPower);
+		uuid = findViewById(R.id.uuid);
+		major = findViewById(R.id.major);
+		minor = findViewById(R.id.minor);
+		measuredPower = findViewById(R.id.measuredPower);
+		password = findViewById(R.id.password);
+		txPower = findViewById(R.id.TxPower);
 
 		String proximityUUID = beacon.getProximityUUID();
 		// uuid.setHint(proximityUUID);
@@ -82,27 +82,27 @@ public class ModifyActivity extends Activity implements OnClickListener {
 		minor.setHint(beacon.getMinor() + "");
 		measuredPower.setHint(beacon.getMeasuredPower() + "");
 
-		ll_absensor = (LinearLayout) findViewById(R.id.ll_absensor);
+		ll_absensor = findViewById(R.id.ll_absensor);
 		ll_absensor.setVisibility(View.GONE);
-		tv_battery = (TextView) findViewById(R.id.battery);
-		tv_txpower = (TextView) findViewById(R.id.txpower);
-		tv_advinterval = (TextView) findViewById(R.id.advinterval);
-		tv_firmwareRevision = (TextView) findViewById(R.id.firmwareRevision);
-		tv_manufacturerName = (TextView) findViewById(R.id.manufacturerName);
+		tv_battery = findViewById(R.id.battery);
+		tv_txpower = findViewById(R.id.txpower);
+		tv_advinterval = findViewById(R.id.advinterval);
+		tv_firmwareRevision = findViewById(R.id.firmwareRevision);
+		tv_manufacturerName = findViewById(R.id.manufacturerName);
 
-		btn_modify = (Button) findViewById(R.id.btn_modify);
-		btn_battery = (Button) findViewById(R.id.btn_battery);
-		btn_txpower = (Button) findViewById(R.id.btn_txpower);
-		btn_advinterval = (Button) findViewById(R.id.btn_advinterval);
-		btn_firmwareRevision = (Button) findViewById(R.id.btn_firmwareRevision);
-		btn_manufacturerName = (Button) findViewById(R.id.btn_manufacturerName);
+		btn_modify = findViewById(R.id.btn_modify);
+		btn_battery = findViewById(R.id.btn_battery);
+		btn_txpower = findViewById(R.id.btn_txpower);
+		btn_advinterval = findViewById(R.id.btn_advinterval);
+		btn_firmwareRevision = findViewById(R.id.btn_firmwareRevision);
+		btn_manufacturerName = findViewById(R.id.btn_manufacturerName);
 
-		btn_on = (Button) findViewById(R.id.bt_turn_on);
-		btn_on_l = (Button) findViewById(R.id.bt_turn_on_l);
-		btn_off = (Button) findViewById(R.id.bt_turn_off);
-		btn_off_l = (Button) findViewById(R.id.bt_turn_off_l);
-		btn_notify = (Button) findViewById(R.id.bt_notify);
-		btn_notify_l = (Button) findViewById(R.id.bt_notify_l);
+		btn_on = findViewById(R.id.bt_turn_on);
+		btn_on_l = findViewById(R.id.bt_turn_on_l);
+		btn_off = findViewById(R.id.bt_turn_off);
+		btn_off_l = findViewById(R.id.bt_turn_off_l);
+		btn_notify = findViewById(R.id.bt_notify);
+		btn_notify_l = findViewById(R.id.bt_notify_l);
 
 		btn_modify.setOnClickListener(this);
 		btn_battery.setOnClickListener(this);
@@ -118,7 +118,7 @@ public class ModifyActivity extends Activity implements OnClickListener {
 		btn_notify.setOnClickListener(this);
 		btn_notify_l.setOnClickListener(this);
 
-		btn_conn = (Button) findViewById(R.id.bt_conn);
+		btn_conn = findViewById(R.id.bt_conn);
 		btn_conn.setOnClickListener(this);
 
 	}
@@ -328,9 +328,9 @@ public class ModifyActivity extends Activity implements OnClickListener {
 	 * 
 	 */
 	private void showEnterDialog() {
-		View view = (View) LayoutInflater.from(this).inflate(
+		View view = LayoutInflater.from(this).inflate(
 				R.layout.dialog_text, null);
-		et_pwd = (EditText) view.findViewById(R.id.et_pwd);
+		et_pwd = view.findViewById(R.id.et_pwd);
 		et_pwd.setText("195660");
 
 		new AlertDialog.Builder(ModifyActivity.this)

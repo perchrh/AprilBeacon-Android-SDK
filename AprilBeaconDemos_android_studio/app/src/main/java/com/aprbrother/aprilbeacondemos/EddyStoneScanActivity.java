@@ -55,7 +55,7 @@ public class EddyStoneScanActivity extends Activity {
 	}
 
 	private void initView() {
-		ListView lv_eddystone = (ListView) findViewById(R.id.lv_eddystone);
+		ListView lv_eddystone = findViewById(R.id.lv_eddystone);
 		adapter = new EddyStoneAdapter(this);
 		lv_eddystone.setAdapter(adapter);
 		lv_eddystone.setOnItemClickListener(new OnItemClickListener() {
@@ -68,7 +68,7 @@ public class EddyStoneScanActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		button = (Button) findViewById(R.id.button);
+		button = findViewById(R.id.button);
 		button.setOnClickListener(new View.OnClickListener() {
 
 			@Override

@@ -89,12 +89,12 @@ public class EddyStoneAdapter extends BaseAdapter {
 		final TextView minorTextView;
 
 		ViewHolder(View view) {
-			name = (TextView) view.findViewWithTag("name");
-			macTextView = (TextView) view.findViewWithTag("mac");
-			uuidTextView = (TextView) view.findViewWithTag("uuid");
-			modelTextView = (TextView) view.findViewWithTag("model");
-			rssiTextView = (TextView) view.findViewWithTag("rssi");
-			minorTextView = (TextView) view.findViewWithTag("minor");
+			name = view.findViewWithTag("name");
+			macTextView = view.findViewWithTag("mac");
+			uuidTextView = view.findViewWithTag("uuid");
+			modelTextView = view.findViewWithTag("model");
+			rssiTextView = view.findViewWithTag("rssi");
+			minorTextView = view.findViewWithTag("minor");
 		}
 	}
 }

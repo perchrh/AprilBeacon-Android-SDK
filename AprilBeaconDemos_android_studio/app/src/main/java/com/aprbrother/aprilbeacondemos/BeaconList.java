@@ -46,7 +46,7 @@ public class BeaconList extends Activity {
 
     private void init() {
         myBeacons = new ArrayList<Beacon>();
-        ListView lv = (ListView) findViewById(R.id.lv);
+        ListView lv = findViewById(R.id.lv);
         adapter = new BeaconAdapter(this);
         lv.setAdapter(adapter);
         AprilL.enableDebugLogging(true);
@@ -83,13 +83,13 @@ public class BeaconList extends Activity {
 
             @Override
             public void onExitedRegion(Region arg0) {
-                Toast.makeText(BeaconList.this, "Notify in", 0).show();
+                Toast.makeText(BeaconList.this, "Notify in", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onEnteredRegion(Region arg0, List<Beacon> arg1) {
-                Toast.makeText(BeaconList.this, "Notify out", 0).show();
+                Toast.makeText(BeaconList.this, "Notify out", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -111,7 +111,7 @@ public class BeaconList extends Activity {
             }
         });
 
-        final TextView tv = (TextView) findViewById(R.id.tv_swith);
+        final TextView tv = findViewById(R.id.tv_swith);
         tv.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -135,7 +135,7 @@ public class BeaconList extends Activity {
             }
         });
 
-        final TextView tv_scan_eddystone = (TextView) findViewById(R.id.tv_scan_eddystone);
+        final TextView tv_scan_eddystone = findViewById(R.id.tv_scan_eddystone);
         tv_scan_eddystone.setOnClickListener(new OnClickListener() {
 
             @Override

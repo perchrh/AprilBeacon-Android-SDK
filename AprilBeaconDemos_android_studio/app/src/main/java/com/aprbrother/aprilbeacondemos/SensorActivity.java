@@ -46,17 +46,17 @@ public class SensorActivity extends Activity implements OnClickListener {
 	}
 
 	private void initView() {
-		btn_on = (Button) findViewById(R.id.bt_turn_on);
-		btn_on_l = (Button) findViewById(R.id.bt_turn_on_l);
-		btn_off = (Button) findViewById(R.id.bt_turn_off);
-		btn_off_l = (Button) findViewById(R.id.bt_turn_off_l);
-		btn_notify = (Button) findViewById(R.id.bt_notify);
-		btn_notify_l = (Button) findViewById(R.id.bt_notify_l);
-		tv_ac_x = (TextView) findViewById(R.id.tv_ac_x);
-		tv_ac_y = (TextView) findViewById(R.id.tv_ac_y);
-		tv_ac_z = (TextView) findViewById(R.id.tv_ac_z);
-		tv_light = (TextView) findViewById(R.id.tv_light);
-		tv_conn_status = (TextView) findViewById(R.id.tv_conn_status);
+		btn_on = findViewById(R.id.bt_turn_on);
+		btn_on_l = findViewById(R.id.bt_turn_on_l);
+		btn_off = findViewById(R.id.bt_turn_off);
+		btn_off_l = findViewById(R.id.bt_turn_off_l);
+		btn_notify = findViewById(R.id.bt_notify);
+		btn_notify_l = findViewById(R.id.bt_notify_l);
+		tv_ac_x = findViewById(R.id.tv_ac_x);
+		tv_ac_y = findViewById(R.id.tv_ac_y);
+		tv_ac_z = findViewById(R.id.tv_ac_z);
+		tv_light = findViewById(R.id.tv_light);
+		tv_conn_status = findViewById(R.id.tv_conn_status);
 		
 
 		btn_on.setOnClickListener(this);
@@ -66,7 +66,7 @@ public class SensorActivity extends Activity implements OnClickListener {
 		btn_notify.setOnClickListener(this);
 		btn_notify_l.setOnClickListener(this);
 
-		btn_conn = (Button) findViewById(R.id.bt_conn);
+		btn_conn = findViewById(R.id.bt_conn);
 		btn_conn.setOnClickListener(this);
 	}
 
@@ -118,7 +118,7 @@ public class SensorActivity extends Activity implements OnClickListener {
 
 				@Override
 				public void connected() {
-					Toast.makeText(SensorActivity.this, "have connect", 0)
+					Toast.makeText(SensorActivity.this, "have connect", Toast.LENGTH_SHORT)
 							.show();
 					if (proDialog != null && proDialog.isShowing()) {
 						proDialog.dismiss();
@@ -135,7 +135,7 @@ public class SensorActivity extends Activity implements OnClickListener {
 				public void run() {
 					
 					if (proDialog != null && proDialog.isShowing()){
-						Toast.makeText(SensorActivity.this, "have not connect,please click the device buonnt s1 and try again", 0).show();
+						Toast.makeText(SensorActivity.this, "have not connect,please click the device buonnt s1 and try again", Toast.LENGTH_SHORT).show();
 						proDialog.dismiss();
 						if (conn != null) {
 							conn.close();

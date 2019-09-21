@@ -24,14 +24,14 @@ public class NotifyInContentActivity extends Activity {
 	}
 
 	private void setAnimtionStart() {
-		ImageView iv = (ImageView) findViewById(R.id.iv_notify_content_in);
+		ImageView iv = findViewById(R.id.iv_notify_content_in);
 		AlphaAnimation alphaAnimation = new AlphaAnimation(0.1f, 1.0f);
 		alphaAnimation.setDuration(3000);
 		iv.startAnimation(alphaAnimation);
 	}
 
 	private void setClickFinish() {
-		LinearLayout ll_notify_content = (LinearLayout) findViewById(R.id.ll_notify_content);
+		LinearLayout ll_notify_content = findViewById(R.id.ll_notify_content);
 		ll_notify_content.setOnClickListener(new OnClickListener() {
 			
 			@Override
