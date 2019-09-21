@@ -1,7 +1,5 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aprbrother.aprilbeacondemo.R;
 import com.aprilbrother.aprilbrothersdk.Beacon;
 import com.aprilbrother.aprilbrothersdk.connection.AprilBeaconCharacteristics;
@@ -25,7 +26,7 @@ import com.aprilbrother.aprilbrothersdk.connection.AprilBeaconConnection.MyWrite
 import com.aprilbrother.aprilbrothersdk.internal.ABAcceleration;
 import com.aprilbrother.aprilbrothersdk.utils.AprilL;
 
-public class ModifyActivity extends Activity implements OnClickListener {
+public class ModifyActivity extends AppCompatActivity implements OnClickListener {
 
 	protected static final String TAG = "ModifyActivity";
 	private EditText uuid;

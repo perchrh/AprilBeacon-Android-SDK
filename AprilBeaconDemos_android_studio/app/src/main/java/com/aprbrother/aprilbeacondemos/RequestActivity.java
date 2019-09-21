@@ -1,12 +1,13 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aprbrother.aprilbeacondemo.R;
 
-public class RequestActivity extends Activity {
+public class RequestActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_request);

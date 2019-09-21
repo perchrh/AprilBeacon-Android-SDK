@@ -1,6 +1,5 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -8,12 +7,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aprbrother.aprilbeacondemo.R;
 import com.aprilbrother.aprilbrothersdk.EddyStone;
 import com.aprilbrother.aprilbrothersdk.connection.EddyStoneConnection;
 import com.aprilbrother.aprilbrothersdk.connection.EddyStoneConnection.EddyStoneWriteCallBack;
 
-public class EddyStoneModifyActivity extends Activity implements
+public class EddyStoneModifyActivity extends AppCompatActivity implements
 		OnClickListener {
 
 	EddyStone eddyStone;

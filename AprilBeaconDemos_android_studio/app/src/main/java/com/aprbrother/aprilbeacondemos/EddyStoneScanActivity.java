@@ -1,6 +1,5 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aprbrother.aprilbeacondemo.R;
 import com.aprilbrother.aprilbrothersdk.BeaconManager;
@@ -17,7 +18,7 @@ import com.aprilbrother.aprilbrothersdk.EddyStone;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class EddyStoneScanActivity extends Activity {
+public class EddyStoneScanActivity extends AppCompatActivity {
 	BeaconManager manager;
 	EddyStoneAdapter adapter;
 	private ArrayList<EddyStone> eddyStones;

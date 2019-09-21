@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -29,13 +30,11 @@ import com.aprilbrother.aprilbrothersdk.utils.AprilL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * 搜索展示beacon列表 scan beacon show beacon list
  */
-public class BeaconList extends Activity {
+public class BeaconList extends AppCompatActivity {
     private static final int REQUEST_ENABLE_BT = 1234;
     private static final String TAG = "BeaconList";
     private static final Region ALL_BEACONS_REGION = new Region("customRegionName", null, null, null);
@@ -81,7 +80,7 @@ public class BeaconList extends Activity {
 
                 myBeacons.clear();
                 myBeacons.addAll(beacons);
-                getActionBar().setSubtitle("Found beacons: " + beacons.size());
+                getSupportActionBar().setSubtitle("Found beacons: " + beacons.size());
                 ComparatorBeaconByRssi com = new ComparatorBeaconByRssi();
                 Collections.sort(myBeacons, com);
                 adapter.replaceWith(myBeacons);
@@ -183,7 +182,7 @@ public class BeaconList extends Activity {
      */
     private void connectToService() {
         Log.i(TAG, "connectToService");
-        getActionBar().setSubtitle("Scanning...");
+        getSupportActionBar().setSubtitle("Scanning...");
         adapter.replaceWith(Collections.emptyList());
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
@@ -207,7 +206,7 @@ public class BeaconList extends Activity {
             } else {
                 Toast.makeText(this, "Bluetooth not enabled", Toast.LENGTH_LONG)
                         .show();
-                getActionBar().setSubtitle("Bluetooth not enabled");
+                getSupportActionBar().setSubtitle("Bluetooth not enabled");
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

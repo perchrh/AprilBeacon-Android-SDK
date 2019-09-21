@@ -1,6 +1,5 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,13 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aprbrother.aprilbeacondemo.R;
 import com.aprilbrother.aprilbrothersdk.Beacon;
 import com.aprilbrother.aprilbrothersdk.connection.AprilBeaconConnection;
 import com.aprilbrother.aprilbrothersdk.connection.AprilBeaconConnection.MyWriteCallback;
 import com.aprilbrother.aprilbrothersdk.internal.ABAcceleration;
 
-public class SensorActivity extends Activity implements OnClickListener {
+public class SensorActivity extends AppCompatActivity implements OnClickListener {
 
 	protected static final String TAG = "SensorActivity";
 

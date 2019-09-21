@@ -1,6 +1,5 @@
 package com.aprbrother.aprilbeacondemos;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -8,9 +7,11 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aprbrother.aprilbeacondemo.R;
 
-public class NotifyInContentActivity extends Activity {
+public class NotifyInContentActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_notify_in_content);
