@@ -1,7 +1,9 @@
 package com.aprbrother.aprilbeacondemos;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.util.Log;
@@ -12,6 +14,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.aprbrother.aprilbeacondemo.R;
 import com.aprilbrother.aprilbrothersdk.Beacon;
@@ -24,6 +29,8 @@ import com.aprilbrother.aprilbrothersdk.utils.AprilL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * 搜索展示beacon列表 scan beacon show beacon list
@@ -31,8 +38,8 @@ import java.util.List;
 public class BeaconList extends Activity {
     private static final int REQUEST_ENABLE_BT = 1234;
     private static final String TAG = "BeaconList";
-    private static final Region ALL_BEACONS_REGION = new Region(
-            "customRegionName", null, null, null);
+    private static final Region ALL_BEACONS_REGION = new Region("customRegionName", null, null, null);
+    private static final int MY_PERMISSIONS_REQUEST_COARSE_LOCATION = 1001;
     private BeaconAdapter adapter;
     private BeaconManager beaconManager;
     private ArrayList<Beacon> myBeacons;
@@ -45,6 +52,8 @@ public class BeaconList extends Activity {
     }
 
     private void init() {
+        requestCoarsePermissionLocation(); // Necessary for
+
         myBeacons = new ArrayList<Beacon>();
         ListView lv = findViewById(R.id.lv);
         adapter = new BeaconAdapter(this);
@@ -145,6 +154,28 @@ public class BeaconList extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void requestCoarsePermissionLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.READ_CONTACTS)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+            } else {
+                // No explanation needed; request the permission
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_COARSE_LOCATION);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        }
     }
 
     /**
