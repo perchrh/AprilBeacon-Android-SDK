@@ -23,3 +23,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-libraryjars libs/ab-sdk-beta1.7.3_jetify.jar
+-keep class com.aprilbrother.aprilbrothersdk.**
+-keep class com.aprilbrother.aprilbrothersdk.Utils{*;}
